@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="emp" class="com.srvcode.springdemo.model.Employee">
+		<constructor-arg value="Shivam" type="java.lang.String"></constructor-arg>
+		<constructor-arg>
+			<value>1001</value>
+		</constructor-arg>
+		<constructor-arg value="12345"></constructor-arg>
+		<constructor-arg>
+			<!--  inner bean -->
+			<bean class="com.srvcode.springdemo.model.Address">
+				<constructor-arg value="street-2" name="streetName" />
+				<constructor-arg value="door-2" name="doorNum" />
+				<constructor-arg value="city-2" name="city" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+</beans>

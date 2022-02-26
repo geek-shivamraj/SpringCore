@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="emp" class="com.srvcode.springdemo.model.Employee" autowire="byType">
+		<property name="empId" value="1001"></property>
+		<property name="empName" value="Raj"></property>
+		<property name="salary" value="45678"></property>
+	</bean>
+
+	<bean id="addr1" class="com.srvcode.springdemo.model.Address">
+		<property name="doorNum" value="door-101"></property>
+		<property name="streetName" value="street-101"></property>
+		<property name="city" value="city-101"></property>
+	</bean>
+	
+	<bean id="addr2" class="com.srvcode.springdemo.model.Address" primary="true">
+		<property name="doorNum" value="door-102"></property>
+		<property name="streetName" value="street-102"></property>
+		<property name="city" value="city-102"></property>
+	</bean>
+
+</beans>
